@@ -27,8 +27,40 @@ namespace modsecurity {
 namespace operators {
 
 class VerifyCC : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Detects credit card numbers in input. This operator will first use the
+    supplied regular expression to perform an initial match, following up
+    with the Luhn algorithm calculation to minimize false positives.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @verifyCC regex
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect credit card numbers in parameters and prevent them from being logged to audit log
+    = SecRule ARGS "@verifyCC \d{13,16}" "phase:2,id:194,nolog,pass,msg:'Potential credit card number',sanitiseMatched"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit VerifyCC(std::unique_ptr<RunTimeString> param)
         : Operator("VerifyCC", std::move(param)),
         m_pc(NULL),

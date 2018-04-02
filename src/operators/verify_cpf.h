@@ -32,8 +32,41 @@ using Utils::Regex;
 namespace operators {
 
 class VerifyCPF : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Detects CPF numbers (Brazilian social number) in input. This operator
+    will first use the supplied regular expression to perform an initial
+    match, following up with an algorithm calculation to minimize false
+    positives.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @verifyCPF regex
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect CPF numbers in parameters and prevent them from being logged to audit log
+    = SecRule ARGS "@verifyCPF /^([0-9]{3}\.){2}[0-9]{3}-[0-9]{2}$/" "phase:2,id:195,nolog,pass,msg:'Potential CPF number',sanitiseMatched"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit VerifyCPF(std::unique_ptr<RunTimeString> param)
         : Operator("VerifyCPF", std::move(param)) {
         m_re = new Regex(m_param);

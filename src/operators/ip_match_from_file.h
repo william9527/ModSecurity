@@ -25,8 +25,54 @@ namespace modsecurity {
 namespace operators {
 
 class IpMatchFromFile : public IpMatch {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs a fast ipv4 or ipv6 match of REMOTE_ADDR variable, loading
+    data from a file. Can handle the following formats:
+
+    - Full IPv4 Address - 192.168.1.100
+    - Network Block/CIDR Address - 192.168.1.0/24
+    - Full IPv6 Address - 2001:db8:85a3:8d3:1319:8a2e:370:7348
+    - Network Block/CIDR Address - 2001:db8:85a3:8d3:1319:8a2e:370:0/24
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @ipMatchFromFile /path/to/file.txt
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    = SecRule REMOTE_ADDR "@ipMatchFromFile ips.txt" "id:163"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - As of v2.9.0-RC1 this operator also supports to load content served
+    by an HTTPS server.
+    - When used with content served by a HTTPS server, the directive
+    SecRemoteRulesFailAction can be used to configure a warning instead of
+    an abort, when the remote content could not be retrieved.
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit IpMatchFromFile(std::unique_ptr<RunTimeString> param)
         : IpMatch("IpMatchFromFile", std::move(param)) { }
     IpMatchFromFile(std::string n, std::unique_ptr<RunTimeString> param)

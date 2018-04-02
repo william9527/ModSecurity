@@ -27,8 +27,43 @@ namespace modsecurity {
 namespace operators {
 
 class ContainsWord : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Returns true if the parameter string (with word boundaries) is found
+    anywhere in the input. Macro expansion is performed on the parameter
+    string before comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @containsWord string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect "select" anywhere in ARGS
+    = SecRule ARGS "@containsWord select" "id:151"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    The example would match on: -1 union *select* BENCHMARK(2142500,MD5(CHAR(115,113,108,109,97,112))) FROM wp_users WHERE ID=1 and (ascii(substr(user_login,1,1))&0x01=0) from wp_users where ID=1--
+    But not on:
+    Your site has a wide *select*ion of computers.
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit ContainsWord(std::unique_ptr<RunTimeString> param)
         : Operator("ContainsWord", std::move(param)) { }
 

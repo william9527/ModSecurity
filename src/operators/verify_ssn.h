@@ -32,8 +32,59 @@ using Utils::Regex;
 namespace operators {
 
 class VerifySSN : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Detects US social security numbers (SSN) in input. This operator will
+    first use the supplied regular expression to perform an initial match,
+    following up with an SSN algorithm calculation to minimize false
+    positives.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @verifySSN regex
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect social security numbers in parameters and
+    prevent them from being logged to audit log
+    = SecRule ARGS "@verifySSN \d{3}-?\d{2}-?\d{4}" "phase:2,id:196,nolog,pass,msg:'Potential social security number',sanitiseMatched"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    A Social Security number is broken up into 3 sections:
+
+    - Area (3 digits)
+    - Group (2 digits)
+    - Serial (4 digits)
+
+    verifySSN checks:
+
+    - Must have 9 digits
+    - Cannot be a sequence number (ie,, 123456789, 012345678)
+    - Cannot be a repetition sequence number ( ie 11111111 , 222222222)
+    - Cannot have area and/or group and/or serial zeroed sequences
+    - Area code must be less than 740
+    - Area code must be different then 666
+    \endverbatim
+
+
+    Notes
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit VerifySSN(std::unique_ptr<RunTimeString> param)
         : Operator("VerifySSN", std::move(param)) {
         m_re = new Regex(m_param);

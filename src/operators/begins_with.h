@@ -27,8 +27,40 @@ namespace modsecurity {
 namespace operators {
 
 class BeginsWith : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Returns true if the parameter string is found at the beginning of the
+    input. Macro expansion is performed on the parameter string before
+    comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @beginsWith string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect request line that does not begin with "GET"
+    = SecRule REQUEST_LINE "!@beginsWith GET" "id:149"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit BeginsWith(std::unique_ptr<RunTimeString> param)
         : Operator("BeginsWith", std::move(param)) { }
 

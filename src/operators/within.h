@@ -27,10 +27,57 @@ namespace modsecurity {
 namespace operators {
 
 class Within : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Returns true if the input value (the needle) is found anywhere within
+    the @within parameter (the haystack). Macro expansion is performed on
+    the parameter string before comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @within string separated by comma
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect request methods other than GET, POST and HEAD
+    =SecRule REQUEST_METHOD "!@within GET,POST,HEAD"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - There are no delimiters for this operator, it is therefore often
+      necessary to artificially impose some; this can be done using setvar.
+      For instance in the example below, without the imposed delimiters
+      (of '/') this rule would also match on the 'range' header (along with
+      many other combinations), since 'range' is within the provided
+      parameter. With the imposed delimiters, the rule would check for
+      '/range/' when the range header is provided, and therefore would not
+      match since '/range/ is not part of the @within parameter.
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit Within(std::unique_ptr<RunTimeString> param)
         : Operator("Within", std::move(param)) {
+            /** macro expansion: true */
             m_couldContainsMacro = true;
         }
     bool evaluate(Transaction *transaction, Rule *rule,

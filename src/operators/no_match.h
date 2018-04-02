@@ -27,8 +27,38 @@ namespace modsecurity {
 namespace operators {
 
 class NoMatch : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Will force the rule to always return false.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @noMatch
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect 15 or fewer headers in a request
+    = SecRule &REQUEST_HEADERS_NAMES "@noMatch" "id:164"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     NoMatch()
         : Operator("NoMatch") { }
 

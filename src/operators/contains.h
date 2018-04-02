@@ -30,8 +30,39 @@ namespace modsecurity {
 namespace operators {
 
 class Contains : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Returns true if the parameter string is found anywhere in the input.
+    Macro expansion is performed on the parameter string before comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @contains string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect ".php" anywhere in the request line
+    = SecRule REQUEST_LINE "@contains .php" "id:150"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit Contains(std::unique_ptr<RunTimeString> param)
         : Operator("Contains", std::move(param)) { }
     bool evaluate(Transaction *transaction, Rule *rule,

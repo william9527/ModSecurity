@@ -36,8 +36,44 @@ struct fuzzy_hash_chunk {
 };
 
 class FuzzyHash : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    The fuzzyHash operator uses the ssdeep, which is a program for
+    computing context triggered piecewise hashes (CTPH). Also called fuzzy
+    hashes, CTPH can match inputs that have homologies. Such inputs have
+    sequences of identical bytes in the same order, although bytes in
+    between these sequences may be different in both content and length.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @fuzzyHash /path/to/ssdeep/hashes.txt threshold
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect SQL Injection inside request uri data"
+    = SecRule REQUEST_BODY "@fuzzyHash /path/to/ssdeep/hashes.txt 6" "id:192372,log,deny"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    For further information on ssdeep, visit its site:
+    http://ssdeep.sourceforge.net/
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit FuzzyHash(std::unique_ptr<RunTimeString> param)
         : Operator("FuzzyHash", std::move(param)),
         m_head(NULL),

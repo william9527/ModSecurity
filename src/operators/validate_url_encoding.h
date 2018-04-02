@@ -26,8 +26,47 @@ namespace modsecurity {
 namespace operators {
 
 class ValidateUrlEncoding : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Validates the URL-encoded characters in the provided input string.
+
+    ModSecurity will automatically decode the URL-encoded characters in
+    request parameters, which means that there is little sense in applying
+    the @validateUrlEncoding operator to them —that is, unless you know that
+    some of the request parameters were URL-encoded more than once. Use this
+    operator against raw input, or against the input that you know is
+    URL-encoded. For example, some applications will URL-encode cookies,
+    although that’s not in the standard. Because it is not in the standard,
+    ModSecurity will neither validate nor decode such encodings.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @validateUrlEncoding
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Validate URL-encoded characters in the request URI
+    = SecRule REQUEST_URI_RAW "@validateUrlEncoding" "id:192"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     ValidateUrlEncoding()
         : Operator("ValidateUrlEncoding") { }
 

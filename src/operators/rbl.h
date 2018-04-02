@@ -33,10 +33,55 @@ namespace modsecurity {
 namespace operators {
 
 class Rbl : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Looks up the input value in the RBL (real-time block list) given as
+    parameter. The parameter can be an IPv4 address or a hostname.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @rbl service uri
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect 15 or fewer headers in a request
+    = SecRule &REQUEST_HEADERS_NAMES "@le 15" "id:164"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - If the RBL used is dnsbl.httpbl.org (Honeypot Project RBL) then the
+    SecHttpBlKey directive must specify the user's registered API key.
+    - If the RBL used is either multi.uribl.com or zen.spamhaus.org combined
+    RBLs, it is possible to also parse the return codes in the last octet
+    of the DNS response to identify which specific RBL the IP was found
+    in.
+    - This operator supports the "capture" action.
+    \endverbatim
+
+    */
  public:
     /**
-     *
-     */
+    *
+    */
     enum RblProvider {
         /**
          * UnknownProvider
@@ -59,8 +104,6 @@ class Rbl : public Operator {
          */
         spamhaus,
     };
-
-    /** @ingroup ModSecurity_Operator */
     explicit Rbl(std::unique_ptr<RunTimeString> param)
         : Operator("Rbl", std::move(param)),
         m_demandsPassword(false) {

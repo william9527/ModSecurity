@@ -34,8 +34,50 @@ namespace modsecurity {
 namespace operators {
 
 class ValidateSchema : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Validates the XML DOM tree against the supplied XML Schema. The DOM tree
+    must have been built previously using the XML request body processor.
+    This operator matches when the validation fails.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @validateSchema /path/to/xml.xsd
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Parse the request bodies that contain XML
+    = SecRule REQUEST_HEADERS:Content-Type ^text/xml$ "phase:1,id:190,nolog,pass,t:lowercase,ctl:requestBodyProcessor=XML"
+
+    Validate XML payload against DTD
+    = SecRule XML "@validateSchema /path/to/xml.xsd" "phase:2,id:191,deny,msg:'Failed DTD validation'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - You must enable the SecXmlExternalEntity directive.
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
 #ifndef WITH_LIBXML2
     explicit ValidateSchema(std::unique_ptr<RunTimeString> param)
         : Operator("ValidateSchema", std::move(param)) { }

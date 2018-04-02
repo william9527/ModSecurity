@@ -25,8 +25,39 @@ namespace modsecurity {
 namespace operators {
 
 class DetectSQLi : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Returns true if SQL injection payload is found. This operator uses
+    LibInjection to detect SQLi attacks.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @detectSQLi string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect SQL Injection inside request uri data"
+    = SecRule REQUEST_URI "@detectSQLi" "id:152"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     DetectSQLi()
         : Operator("DetectSQLi") {
             m_match_message.assign("detected SQLi using libinjection.");

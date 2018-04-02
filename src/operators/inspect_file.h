@@ -28,8 +28,56 @@ namespace modsecurity {
 namespace operators {
 
 class InspectFile : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Executes an external program for every variable in the target list. The
+    contents of the variable is provided to the script as the first
+    parameter on the command line. The program must be specified as the
+    first parameter to the operator. As of version 2.5.0, if the supplied
+    program filename is not absolute, it is treated as relative to the
+    directory in which the configuration file resides. Also as of version
+    2.5.0, if the filename is determined to be a Lua script (based on its
+    .lua extension), the script will be processed by the internal Lua
+    engine. Internally processed scripts will often run faster (there is no
+    process creation overhead) and have full access to the transaction
+    context of ModSecurity.
+
+    The @inspectFile operator was initially designed for file inspection
+    (hence the name), but it can also be used in any situation that requires
+    decision making using external logic.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @inspectFile /path/to/file.ext
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Execute external program to validate uploaded files
+    = SecRule FILES_TMPNAMES "@inspectFile /path/to/util/runav.pl" "id:159"
+
+    Example of using Lua script (placed in the same directory as the
+    configuration file):
+    = SecRule FILES_TMPNAMES "@inspectFile inspect.lua" "id:160"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit InspectFile(std::unique_ptr<RunTimeString> param)
         : Operator("InspectFile", std::move(param)),
         m_file(""),

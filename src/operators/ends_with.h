@@ -27,8 +27,39 @@ namespace modsecurity {
 namespace operators {
 
 class EndsWith : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Returns true if the parameter string is found at the end of the input.
+    Macro expansion is performed on the parameter string before comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @endsWith string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect request line that does not end with "HTTP/1.1"
+    = SecRule REQUEST_LINE "!@endsWith HTTP/1.1" "id:152"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit EndsWith(std::unique_ptr<RunTimeString> param)
         : Operator("EndsWith", std::move(param)) {
             m_couldContainsMacro = true;

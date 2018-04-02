@@ -29,8 +29,40 @@ namespace modsecurity {
 namespace operators {
 
 class StrEq : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs a string comparison and returns true if the parameter string is
+    identical to the input string. Macro expansion is performed on the
+    parameter string before comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @streq string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect request parameters "foo" that do not # contain "bar", exactly.
+    = SecRule ARGS:foo "!@streq bar" "id:176"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit StrEq(std::unique_ptr<RunTimeString> param)
         : Operator("StrEq", std::move(param)) { }
 

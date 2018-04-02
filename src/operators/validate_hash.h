@@ -27,8 +27,38 @@ namespace modsecurity {
 namespace operators {
 
 class ValidateHash : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Validates REQUEST_URI that contains data protected by the hash engine.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @validatehash
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Validates requested URI that matches a regular expression.
+    = SecRule REQUEST_URI "@validatehash" "product_info|product_list" "phase:1,deny,id:123456"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit ValidateHash(std::unique_ptr<RunTimeString> param)
         : Operator("ValidateHash", std::move(param)) { }
     bool evaluate(Transaction *transaction, const std::string  &str) override;

@@ -27,8 +27,41 @@ namespace modsecurity {
 namespace operators {
 
 class StrMatch : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs a string match of the provided word against the desired
+    input value. The operator uses the pattern matching Boyer-Moore-Horspool
+    algorithm, which means that it is a single pattern matching operator.
+    This operator performs much better than a regular expression.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @le integer
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect suspicious client by looking at the user agent identification
+    = SecRule REQUEST_HEADERS:User-Agent "@strmatch WebZIP" "id:177"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit StrMatch(std::unique_ptr<RunTimeString> param)
         : Operator("StrMatch", std::move(param)) {
             m_couldContainsMacro = true;

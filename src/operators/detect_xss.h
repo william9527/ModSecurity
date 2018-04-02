@@ -24,8 +24,39 @@ namespace modsecurity {
 namespace operators {
 
 class DetectXSS : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Returns true if XSS injection is found. This operator uses LibInjection
+    to detect XSS attacks.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @beginsWith string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect XSS Injection inside request body
+    = SecRule REQUEST_BODY "@detectXSS" "id:12345,log,deny"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     DetectXSS()
         : Operator("DetectXSS") {
             m_match_message.assign("detected XSS using libinjection.");

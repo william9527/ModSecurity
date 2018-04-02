@@ -27,8 +27,47 @@ namespace modsecurity {
 namespace operators {
 
 class IpMatch : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs a fast ipv4 or ipv6 match of REMOTE_ADDR variable data. Can
+    handle the following formats:
+
+    - Full IPv4 Address - 192.168.1.100
+    - Network Block/CIDR Address - 192.168.1.0/24
+    - Full IPv6 Address - 2001:db8:85a3:8d3:1319:8a2e:370:7348
+    - Network Block/CIDR Address - 2001:db8:85a3:8d3:1319:8a2e:370:0/24
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @ipMatch ips separated by comma
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Individual Address:
+    = SecRule REMOTE_ADDR "@ipMatch 192.168.1.100" "id:161"
+
+    Multiple Addresses w/network block:
+    = SecRule REMOTE_ADDR "@ipMatch 192.168.1.100,192.168.1.50,10.10.50.0/24" "id:162"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit IpMatch(std::unique_ptr<RunTimeString> param)
         : Operator("IpMatch", std::move(param)) { }
     IpMatch(std::string n, std::unique_ptr<RunTimeString> param)

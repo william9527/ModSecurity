@@ -25,8 +25,50 @@ namespace modsecurity {
 namespace operators {
 
 class GeoLookup : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs a geolocation lookup using the IP address in input against the
+    geolocation database previously configured using SecGeoLookupDb. If the
+    lookup is successful, the obtained information is captured in the GEO
+    collection.
+    \endverbatim
+
+    Syntax
+
+
+    \verbatim
+    SecGeoLookupDb /path/to/GeoLiteCity.dat
+    @geoLookup
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Configure geolocation database
+    = SecGeoLookupDb /path/to/GeoLiteCity.dat
+
+    Lookup IP address
+    = SecRule REMOTE_ADDR "@geoLookup" "phase:1,id:155,nolog,pass"
+
+    Block IP address for which geolocation failed
+    = SecRule &GEO "@eq 0" "phase:1,id:156,deny,msg:'Failed to lookup IP'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    See the GEO variable for an example and more information on various
+    fields available.
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     GeoLookup()
         : Operator("GeoLookup") { }
     bool evaluate(Transaction *transaction, const std::string &exp) override;

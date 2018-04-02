@@ -73,6 +73,11 @@
  */
 
 
+/**
+ * @defgroup ModSecurity_RefManual ModSecurity Reference Manual
+ *
+ */
+
 #ifdef __cplusplus
 #include <ctime>
 #include <iostream>

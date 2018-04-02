@@ -26,8 +26,48 @@ namespace modsecurity {
 namespace operators {
 
 class Ge : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs numerical comparison and returns true if the input value is
+    greater than or equal to the provided parameter. Macro expansion is
+    performed on the parameter string before comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @detectSQLi string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect 15 or more request headers
+    = SecRule &REQUEST_HEADERS_NAMES "@ge 15" "id:154"
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - If a value is provided that cannot be converted to an integer
+    (i.e a string) this operator will treat that value as 0.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit Ge(std::unique_ptr<RunTimeString> param)
         : Operator("Ge", std::move(param)) {
             m_couldContainsMacro = true;

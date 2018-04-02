@@ -30,6 +30,51 @@ namespace operators {
 
 
 class Pm : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs a case-insensitive match of the provided phrases against the
+    desired input value. The operator uses a set-based matching algorithm
+    (Aho-Corasick), which means that it will match any number of keywords
+    in parallel. When matching of a large number of keywords is needed,
+    this operator performs much better than a regular expression.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @pm string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect suspicious client by looking at the user agent identification
+    = SecRule REQUEST_HEADERS:User-Agent "@pm WebZIP WebCopier Webster WebStripper ... SiteSnagger ProWebWalker CheeseBot" "id:166"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - Starting on ModSecurity v2.6.0 this operator supports a snort/suricata
+    content style. ie: "@pm A|42|C|44|F".
+    - This operator does not support macro expansion (as of ModSecurity v2.9.1).
+    - This operator supports the "capture" action.
+    \endverbatim
+
+    */
  public:
     /** @ingroup ModSecurity_Operator */
     explicit Pm(std::unique_ptr<RunTimeString> param)

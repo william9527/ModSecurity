@@ -26,8 +26,49 @@ namespace modsecurity {
 namespace operators {
 
 class GsbLookup : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs a local lookup of Google's Safe Browsing using URLs in input
+    against the GSB database previously configured using SecGsbLookupDb.
+    When combined with capture operator it will save the matched url into
+    tx.0 variable.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @gsbLookup REGEX
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    The gsbLookup operator matches on success and is thus best used in
+    combination with a block or redirect action. If you wish to block on
+    successful lookups, the following example demonstrates how best to do
+    it:
+
+    Configure Google Safe Browsing database
+    = SecGsbLookupDb /path/to/GsbMalware.dat
+
+    Check response bodies for malicious links
+    = SecRule RESPONSE_BODY "@gsbLookup =\"https?\:\/\/(.*?)\"" "phase:4,id:157,capture,log,block,msg:'Bad url detected in RESPONSE_BODY (Google Safe Browsing Check)',logdata:'http://www.google.com/safebrowsing/diagnostic?site=%{tx.0}'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit GsbLookup(std::unique_ptr<RunTimeString> param)
         : Operator("GsbLookup", std::move(param)) { }
 

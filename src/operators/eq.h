@@ -27,8 +27,49 @@ namespace modsecurity {
 namespace operators {
 
 class Eq : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs numerical comparison and returns true if the input value is
+    equal to the provided parameter. Macro expansion is performed on the
+    parameter string before comparison.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @eq string
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect exactly 15 request headers
+    = SecRule &REQUEST_HEADERS_NAMES "@eq 15" "id:153"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - If a value is provided that cannot be converted to an integer
+    (i.e a string) this operator will treat that value as 0.
+    \endverbatim
+
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit Eq(std::unique_ptr<RunTimeString> param)
         : Operator("Eq", std::move(param)) { }
     bool evaluate(Transaction *transaction, const std::string &input) override;

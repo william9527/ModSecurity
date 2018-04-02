@@ -26,8 +26,40 @@ namespace modsecurity {
 namespace operators {
 
 class UnconditionalMatch : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Will force the rule to always return true. This is similar to SecAction
+    however all actions that occur as a result of a rule matching will fire
+    such as the setting of MATCHED_VAR. This can also be part a chained
+    rule.
+    \endverbatim
+
+
+    Syntax
+
+    \verbatim
+    @le integer
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    = SecRule REMOTE_ADDR "@unconditionalMatch" "id:1000,phase:1,pass,nolog,t:hexEncode,setvar:TX.ip_hash=%{MATCHED_VAR}"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     UnconditionalMatch()
         : Operator("UnconditionalMatch") { }
 

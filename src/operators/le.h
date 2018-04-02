@@ -27,8 +27,48 @@ namespace modsecurity {
 namespace operators {
 
 class Le : public Operator {
+    /** @ingroup ModSecurity_Operator ModSecurity_RefManual ModSecurity_RefManualOp */
+    /**
+
+    Description
+
+    \verbatim
+    Performs numerical comparison and returns true if the input value is
+    less than or equal to the operator parameter. Macro expansion is
+    performed on the parameter string before comparison.
+    \endverbatim
+
+
+    Syntax
+    \verbatim
+    @le integer
+    \endverbatim
+
+
+    Examples
+
+    \verbatim
+    Detect 15 or fewer headers in a request
+    = SecRule &REQUEST_HEADERS_NAMES "@le 15" "id:164"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+
+    Notes
+
+    \verbatim
+    - If a value is provided that cannot be converted to an integer
+    (i.e a string) this operator will treat that value as 0.
+    \endverbatim
+
+
+    */
  public:
-    /** @ingroup ModSecurity_Operator */
     explicit Le(std::unique_ptr<RunTimeString> param)
         : Operator("Le", std::move(param)) {
             m_couldContainsMacro = true;
