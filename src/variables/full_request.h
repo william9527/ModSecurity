@@ -30,6 +30,29 @@ class Transaction;
 namespace Variables {
 
 class FullRequest : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FULL_REQUEST
+
+    \verbatim
+    Contains the complete request: Request line, Request headers and Request
+    body (if any). The last available only if SecRequestBodyAccess was set to
+    On. Note that all properties of SecRequestBodyAccess will be respected
+    here, such as: SecRequestBodyLimit.
+
+    = SecRule FULL_REQUEST "User-Agent: ModSecurity Regression Tests" "id:21"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     FullRequest()
         : Variable("FULL_REQUEST") { }

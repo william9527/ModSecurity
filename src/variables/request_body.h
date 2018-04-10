@@ -30,6 +30,29 @@ class Transaction;
 namespace Variables {
 
 class RequestBody : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_BODY
+
+    \verbatim
+    Holds the raw request body. This variable is available only if the
+    URLENCODED request body processor was used, which will occur by default
+    when the application/x-www-form-urlencoded content type is detected, or if
+    the use of the URLENCODED request body parser was forced.
+
+    = SecRule REQUEST_BODY "^username=\w{25,}\&password=\w{25,}\&Submit\=login$" "id:43"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestBody()
         : Variable("REQUEST_BODY") { }

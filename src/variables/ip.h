@@ -32,6 +32,23 @@ namespace Variables {
 
 
 class Ip_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: IP
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Ip_DictElement(std::string dictElement)
         : Variable("IP:" + dictElement),

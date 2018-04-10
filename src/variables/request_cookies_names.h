@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class RequestCookiesNames_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_COOKIES_NAMES
+
+    \verbatim
+    This variable is a collection of the names of all request cookies. For
+    example, the following rule will trigger if the JSESSIONID cookie is not
+    present:
+
+    = SecRule &REQUEST_COOKIES_NAMES:JSESSIONID "@eq 0" "id:45"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RequestCookiesNames_DictElement(std::string dictElement)
         : Variable("REQUEST_COOKIES_NAMES" + std::string(":") +

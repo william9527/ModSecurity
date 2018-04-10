@@ -30,6 +30,29 @@ class Transaction;
 namespace Variables {
 
 class AuthType : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: AUTH_TYPE
+
+    \verbatim
+    This variable holds the authentication method used to validate a user, if
+    any of the methods built into HTTP are used. In a reverse-proxy deployment,
+    this information will not be available if the authentication is handled in
+    the backend web server.
+
+    = SecRule AUTH_TYPE "Basic" "id:14"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     AuthType()
         : Variable("AUTH_TYPE") { }

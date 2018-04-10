@@ -30,6 +30,30 @@ class Transaction;
 namespace Variables {
 
 class UserID : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: USERID
+
+    \verbatim
+    This variable contains the value set with setuid.
+
+    = # Initialize user tracking
+    = SecAction "nolog,id:84,pass,setuid:%{REMOTE_USER}"
+    =
+    = # Is the current user the administrator?
+    = SecRule USERID "admin" "id:85"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     UserID()
         : Variable("USERID") { }

@@ -30,6 +30,24 @@ class Transaction;
 namespace Variables {
 
 class MultiPartFileName_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_FILENAME
+
+    \verbatim
+    This variable contains the multipart data from field FILENAME.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit MultiPartFileName_DictElement(std::string dictElement)
         : Variable("MULTIPART_FILENAME" + std::string(":") +

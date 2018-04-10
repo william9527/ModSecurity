@@ -30,6 +30,24 @@ class Transaction;
 namespace Variables {
 
 class UniqueID : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: UNIQUEID
+
+    \verbatim
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     UniqueID()
         : Variable("UNIQUEID") { }

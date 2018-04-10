@@ -28,6 +28,26 @@ class Transaction;
 namespace Variables {
 
 class Rule_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RULE
+
+    \verbatim
+    This is a special collection that provides access to the id, rev, severity,
+    logdata, and msg fields of the rule that triggered the action. It can be
+    used to refer to only the same rule in which it resides.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Rule_DictElement(std::string dictElement)
         : Variable("RULE" + std::string(":") +

@@ -29,6 +29,27 @@ class Transaction;
 namespace Variables {
 
 class TimeWDay : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_WDAY
+
+    \verbatim
+    This variable holds the current weekday value (0–6). The following rule
+    triggers only on Saturday and Sunday:
+
+    = SecRule TIME_WDAY "^(0|6)$" "id:80"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeWDay(std::string _name)
         : Variable(_name),

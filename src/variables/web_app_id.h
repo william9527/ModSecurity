@@ -31,6 +31,26 @@ class Transaction;
 namespace Variables {
 
 class WebAppId : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: WEBAPPID
+
+    \verbatim
+    This variable contains the current application name, which is set in
+    configuration using SecWebAppId.
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     WebAppId()
         : Variable("WEBAPPID") { }

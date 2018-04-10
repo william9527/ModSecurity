@@ -30,6 +30,27 @@ class Transaction;
 namespace Variables {
 
 class FilesCombinedSize : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FILES_COMBINED_SIZE
+
+    \verbatim
+    Contains the total size of the files transported in request body. Available
+    only on inspected multipart/form-data requests.
+
+    = SecRule FILES_COMBINED_SIZE "@gt 100000" "id:18"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     FilesCombinedSize()
         : Variable("FILES_COMBINED_SIZE") { }

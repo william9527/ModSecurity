@@ -30,6 +30,30 @@ class Transaction;
 namespace Variables {
 
 class ResponseContentLength : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESPONSE_CONTENT_LENGTH
+
+    \verbatim
+    Response body length in bytes. Can be available starting with phase 3, but
+    it does not have to be (as the length of response body is not always known
+    in advance). If the size is not known, this variable will contain a zero.
+    If RESPONSE_CONTENT_LENGTH contains a zero in phase 5 that means the actual
+    size of the response body was 0. The value of this variable can change
+    between phases if the body is modified. For example, in embedded mode,
+    mod_deflate can compress the response body between phases 4 and 5.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ResponseContentLength()
         : Variable("RESPONSE_CONTENT_LENGTH") { }

@@ -30,6 +30,34 @@ class Transaction;
 namespace Variables {
 
 class MultipartUnmatchedBoundary : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_UNMATCHED_BOUNDARY
+
+    \verbatim
+    Set to 1 when, during the parsing phase of a multipart/request-body,
+    ModSecurity encounters what feels like a boundary but it is not. Such an
+    event may occur when evasion of ModSecurity is attempted.
+
+    The best way to use this variable is as in the example below:
+
+    = SecRule MULTIPART_UNMATCHED_BOUNDARY "!@eq 0" \
+"phase:2,id:31,t:none,log,deny,msg:'Multipart parser detected a possible unmatched boundary.'"
+
+    Change the rule from blocking to logging-only if many false positives are
+    encountered.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartUnmatchedBoundary()
         : Variable("MULTIPART_UNMATCHED_BOUNDARY") { }

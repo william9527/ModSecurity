@@ -29,6 +29,27 @@ class Transaction;
 namespace Variables {
 
 class TimeMon : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_MON
+
+    \verbatim
+    This variable holds the current month value (0–11). The following rule
+    matches if the month is either November (value 10) or December (value 11):
+
+    = SecRule TIME_MON "^1" "id:78"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeMon(std::string _name)
         : Variable(_name),

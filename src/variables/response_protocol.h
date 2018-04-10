@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class ResponseProtocol : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESPONSE_PROTOCOL
+
+    \verbatim
+    This variable holds the HTTP response protocol information.
+
+    = SecRule RESPONSE_PROTOCOL "^HTTP\/0\.9" "phase:3,id:57,t:none"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ResponseProtocol()
         : Variable("RESPONSE_PROTOCOL") { }

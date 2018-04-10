@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class ResponseHeadersNames_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESPONSE_HEADERS_NAMES
+
+    \verbatim
+    This variable is a collection of the response header names.
+
+    = SecRule RESPONSE_HEADERS_NAMES "Set-Cookie" "phase:3,id:56,t:none"
+
+    The same limitations apply as the ones discussed in RESPONSE_HEADERS.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ResponseHeadersNames_DictElement(std::string dictElement)
         : Variable("RESPONSE_HEADERS_NAMES" + std::string(":") +

@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class Status : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: STATUS
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     Status()
         : Variable("STATUS") { }

@@ -29,6 +29,28 @@ class Transaction;
 namespace Variables {
 
 class TimeDay : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_DAY
+
+    \verbatim
+    This variable holds the current date (1–31). The following rule triggers
+    on a transaction that’s happening anytime between the 10th and 20th in a
+    month:
+
+    = SecRule TIME_DAY "^(([1](0|1|2|3|4|5|6|7|8|9))|20)$" "id:75"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeDay(std::string _name)
         : Variable(_name),

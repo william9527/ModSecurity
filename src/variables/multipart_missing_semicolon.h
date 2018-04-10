@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartMissingSemicolon : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_MISSING_SEMICOLON
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartMissingSemicolon()
         : Variable("MULTIPART_MISSING_SEMICOLON") { }

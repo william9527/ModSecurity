@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class ResponseContentType : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESPONSE_CONTENT_TYPE
+
+    \verbatim
+    Response content type. Available only starting with phase 3. The value
+    available in this variable is taken directly from the internal structures
+    of Apache, which means that it may contain the information that is not yet
+    available in response headers. In embedded deployments, you should always
+    refer to this variable, rather than to RESPONSE_HEADERS:Content-Type.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ResponseContentType()
         : Variable("RESPONSE_CONTENT_TYPE") { }

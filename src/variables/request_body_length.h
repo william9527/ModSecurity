@@ -30,6 +30,24 @@ class Transaction;
 namespace Variables {
 
 class RequestBodyLength : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_BODY_LENGTH
+
+    \verbatim
+    Contains the number of bytes read from a request body.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestBodyLength()
         : Variable("REQUEST_BODY_LENGTH") { }

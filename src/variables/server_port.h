@@ -30,6 +30,27 @@ class Transaction;
 namespace Variables {
 
 class ServerPort : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: SERVER_PORT
+
+    \verbatim
+    This variable contains the local port that the web server (or reverse
+    proxy) is listening on.
+
+    = SecRule SERVER_PORT "^80$" "id:69"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ServerPort()
         : Variable("SERVER_PORT") { }

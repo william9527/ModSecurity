@@ -30,6 +30,25 @@ class Transaction;
 namespace Variables {
 
 class ArgsPostNames_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: ARGS_POST_NAMES
+
+    \verbatim
+    ARGS_POST_NAMES is similar to ARGS_NAMES, but contains only the names of
+    request body parameters.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ArgsPostNames_DictElement(std::string dictElement)
         : Variable("ARGS_POST_NAMES" + std::string(":") +

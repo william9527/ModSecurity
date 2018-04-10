@@ -32,6 +32,40 @@ namespace Variables {
 
 
 class Tx_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TX
+
+    \verbatim
+    This is the transient transaction collection, which is used to store pieces
+    of data, create a transaction anomaly score, and so on. The variables
+    placed into this collection are available only until the transaction is
+    complete.
+
+    = # Increment transaction attack score on attack
+    = SecRule ARGS attack "phase:2,id:82,nolog,pass,setvar:TX.score=+5"
+
+    = # Block the transactions whose scores are too high
+    = SecRule TX:SCORE "@gt 20" "phase:2,id:83,log,deny"
+
+    Some variable names in the TX collection are reserved and cannot be used:
+
+    - TX:0: the matching value when using the @rx or @pm operator with the capture action
+    - TX:1-TX:9: the captured subexpression value when using the @rx operator with capturing parens and the capture action
+    - TX:MSC_.*: ModSecurity processing flags
+    - MSC_PCRE_LIMITS_EXCEEDED: Set to nonzero if PCRE match limits are exceeded. See SecPcreMatchLimit and SecPcreMatchLimitRecursion for more information.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Tx_DictElement(std::string dictElement)
         : Variable("TX:" + dictElement),

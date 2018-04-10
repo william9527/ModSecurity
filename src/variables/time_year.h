@@ -29,6 +29,26 @@ class Transaction;
 namespace Variables {
 
 class TimeYear : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_YEAR
+
+    \verbatim
+    This variable holds the current four-digit year value.
+
+    = SecRule TIME_YEAR "^2006$" "id:81"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeYear(std::string _name)
         : Variable(_name),

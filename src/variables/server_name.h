@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class ServerName : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: SERVER_NAME
+
+    \verbatim
+    This variable contains the transaction’s hostname or IP address, taken from
+    the request itself (which means that, in principle, it should not be
+    trusted).
+
+    = SecRule SERVER_NAME "hostname\.com$" "id:68"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ServerName()
         : Variable("SERVER_NAME") { }

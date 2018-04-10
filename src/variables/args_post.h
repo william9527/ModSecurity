@@ -30,6 +30,25 @@ class Transaction;
 namespace Variables {
 
 class ArgsPost_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: ARGS_POST
+
+    \verbatim
+    ARGS_POST is similar to ARGS, but only contains arguments from the POST
+    body.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ArgsPost_DictElement(std::string dictElement)
         : Variable("ARGS_POST" + std::string(":") + std::string(dictElement)),

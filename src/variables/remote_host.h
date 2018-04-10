@@ -30,6 +30,31 @@ class Transaction;
 namespace Variables {
 
 class RemoteHost : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REMOTE_HOST
+
+    \verbatim
+    If the Apache directive HostnameLookups is set to On, then this variable
+    will hold the remote hostname resolved through DNS. If the directive is set
+    to Off, this variable it will hold the remote IP address (same as
+    REMOTE_ADDR). Possible uses for this variable would be to deny known bad
+    client hosts or network blocks, or conversely, to allow in authorized
+    hosts.
+
+    = SecRule REMOTE_HOST "\.evil\.network\org$" "id:36"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RemoteHost()
         : Variable("REMOTE_HOST") { }

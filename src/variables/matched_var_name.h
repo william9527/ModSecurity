@@ -30,6 +30,31 @@ class Transaction;
 namespace Variables {
 
 class MatchedVarName : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MATCHED_VAR_NAME
+
+    \verbatim
+    This variable holds the full name of the variable that was matched against.
+
+    = SecRule ARGS pattern "chain,deny,id:27"
+    = SecRule MATCHED_VAR_NAME "@eq ARGS:param"
+
+    Note: Be aware that this variable holds data for the last operator match.
+    This means that if there are more than one matches, only the last one will
+    be populated. Use MATCHED_VARS_NAMES variable if you want all matches.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MatchedVarName()
         : Variable("MATCHED_VAR_NAME") { }

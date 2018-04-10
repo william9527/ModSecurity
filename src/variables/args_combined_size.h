@@ -30,6 +30,30 @@ class Transaction;
 namespace Variables {
 
 class ArgsCombinedSize : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: ARGS_COMBINED_SIZE
+
+    \verbatim
+    Contains the combined size of all request parameters. Files are excluded
+    from the calculation. This variable can be useful, for example, to create a
+    rule to ensure that the total size of the argument data is below a certain
+    threshold. The following rule detects a request whose para- meters are more
+    than 2500 bytes long:
+
+    = SecRule ARGS_COMBINED_SIZE "@gt 2500" "id:12"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ArgsCombinedSize()
         : Variable("ARGS_COMBINED_SIZE") { }

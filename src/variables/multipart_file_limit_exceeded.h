@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartFileLimitExceeded : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_FILE_LIMIT_EXCEEDED
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartFileLimitExceeded()
         : Variable("MULTIPART_FILE_LIMIT_EXCEEDED") { }

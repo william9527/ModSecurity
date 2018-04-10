@@ -29,6 +29,28 @@ namespace modsecurity {
 class Transaction;
 namespace Variables {
 class FilesTmpNames_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FILES_TMPNAMES
+
+    \verbatim
+    Contains a list of temporary files’ names on the disk. Useful when used
+    together with @inspectFile. Available only on inspected multipart/form-data
+    requests.
+
+    = SecRule FILES_TMPNAMES "@inspectFile /path/to/inspect_script.pl" "id:21"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit FilesTmpNames_DictElement(std::string dictElement)
         : Variable("FILES_TMPNAMES" + std::string(":") +

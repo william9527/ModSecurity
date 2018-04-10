@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartLFLine : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_LF_LINE
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartLFLine()
         : Variable("MULTIPART_LF_LINE") { }

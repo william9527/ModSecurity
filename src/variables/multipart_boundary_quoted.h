@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartBoundaryQuoted : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_BOUNDARY_QUOTED
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartBoundaryQuoted()
         : Variable("MULTIPART_BOUNDARY_QUOTED") { }

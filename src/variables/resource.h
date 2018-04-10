@@ -32,6 +32,23 @@ namespace Variables {
 
 
 class Resource_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESOURCE
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Resource_DictElement(std::string dictElement)
         : Variable("RESOURCE:" + dictElement),

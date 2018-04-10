@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartInvalidPart : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_INVALID_PART
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartInvalidPart()
         : Variable("MULTIPART_INVALID_PART") { }

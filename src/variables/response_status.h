@@ -30,6 +30,30 @@ class Transaction;
 namespace Variables {
 
 class ResponseStatus : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESPONSE_STATUS
+
+    \verbatim
+    This variable holds the HTTP response status code:
+
+    = SecRule RESPONSE_STATUS "^[45]" "phase:3,id:58,t:none"
+
+    This variable may not work as expected in embedded mode, as Apache
+    sometimes handles certain requests differently, and without invoking
+    ModSecurity (all other modules).
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ResponseStatus()
         : Variable("RESPONSE_STATUS") { }

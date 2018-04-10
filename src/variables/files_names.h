@@ -30,6 +30,27 @@ class Transaction;
 namespace Variables {
 
 class FilesNames_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FILES_NAMES
+
+    \verbatim
+    Contains a list of form fields that were used for file upload. Available
+    only on inspected multipart/form-data requests.
+
+    = SecRule FILES_NAMES "^upfile$" "id:19"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit FilesNames_DictElement(std::string dictElement)
         : Variable("FILES_NAMES" + std::string(":") +

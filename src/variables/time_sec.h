@@ -29,6 +29,26 @@ class Transaction;
 namespace Variables {
 
 class TimeSec : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_SEC
+
+    \verbatim
+    This variable holds the current second value (0–59).
+
+    = SecRule TIME_SEC "@gt 30" "id:79"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeSec(std::string _name)
         : Variable(_name),

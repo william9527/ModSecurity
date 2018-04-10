@@ -30,6 +30,30 @@ class Transaction;
 namespace Variables {
 
 class ArgsNames_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: ARGS_NAMES
+
+    \verbatim
+    Contains all request parameter names. You can search for specific parameter
+    names that you want to inspect. In a positive policy scenario, you can also
+    whitelist (using an inverted rule with the exclamation mark) only the
+    authorized argument names. This example rule allows only two argument names:
+    p and a:
+
+    = SecRule ARGS_NAMES "!^(p|a)$" "id:13"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ArgsNames_DictElement(std::string dictElement)
         : Variable("ARGS_NAMES" + std::string(":") +

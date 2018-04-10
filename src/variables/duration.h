@@ -29,6 +29,26 @@ class Transaction;
 namespace Variables {
 
 class Duration : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: DURATION
+
+    \verbatim
+    Contains the number of milliseconds elapsed since the beginning of the
+    current transaction. Available starting with 2.6.0.
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Duration(std::string _name)
         : Variable(_name),

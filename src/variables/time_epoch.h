@@ -29,6 +29,24 @@ class Transaction;
 namespace Variables {
 
 class TimeEpoch : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_EPOCH
+
+    \verbatim
+    This variable holds the time in seconds since 1970.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeEpoch(std::string _name)
         : Variable(_name),

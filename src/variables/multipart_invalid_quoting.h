@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartInvalidQuoting : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_INVALID_QUOTING
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartInvalidQuoting()
         : Variable("MULTIPART_INVALID_QUOTING") { }

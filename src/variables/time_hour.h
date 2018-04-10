@@ -29,6 +29,27 @@ class Transaction;
 namespace Variables {
 
 class TimeHour : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_HOUR
+
+    \verbatim
+    This variable holds the current hour value (0–23). The following rule
+    triggers when a request is made “off hours”:
+
+    = SecRule TIME_HOUR "^(0|1|2|3|4|5|6|[1](8|9)|[2](0|1|2|3))$" "id:76"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeHour(std::string _name)
         : Variable(_name),

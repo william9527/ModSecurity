@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class PathInfo : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: PATH_INFO
+
+    \verbatim
+    Contains the extra request URI information, also known as path info. (For
+    example, in the URI /index.php/123, /123 is the path info.) Available only
+    in embedded deployments.
+
+    = SecRule PATH_INFO "^/(bin|etc|sbin|opt|usr)" "id:33"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     PathInfo()
         : Variable("PATH_INFO") { }

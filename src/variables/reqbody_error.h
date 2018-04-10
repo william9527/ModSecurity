@@ -30,6 +30,38 @@ class Transaction;
 namespace Variables {
 
 class ReqbodyError : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQBODY_ERROR
+
+    \verbatim
+    Contains the status of the request body processor used for request body
+    parsing. The values can be 0 (no error) or 1 (error). This variable will be
+    set by request body processors (typically the multipart/request-data
+    parser, JSON or the XML parser) when they fail to do their work.
+
+    = SecRule REQBODY_ERROR "@eq 1" deny,phase:2,id:39
+
+    Note: Your policies must have a rule to check for request body processor
+    errors at the very beginning of phase 2. Failure to do so will leave the
+    door open for impedance mismatch attacks. It is possible, for example, that
+    a payload that cannot be parsed by ModSecurity can be successfully parsed
+    by more tolerant parser operating in the application. If your policy
+    dictates blocking, then you should reject the request if error is detected.
+    When operating in detection-only mode, your rule should alert with high
+    severity when request body processing fails.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ReqbodyError()
         : Variable("REQBODY_ERROR") { }

@@ -31,6 +31,29 @@ class Transaction;
 namespace Variables {
 
 class ModsecBuild : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MODSEC_BUILD
+
+    \verbatim
+    This variable holds the ModSecurity build number. This variable is intended
+    to be used to check the build number prior to using a feature that is
+    available only in a certain build. Example:
+
+    = SecRule MODSEC_BUILD "!@ge 02050102" "skipAfter:12345,id:29"
+    = SecRule ARGS "@pm some key words" "id:12345,deny,status:500"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ModsecBuild(std::string _name)
         : Variable(_name),

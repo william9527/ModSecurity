@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class MatchedVars_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MATCHED_VARS
+
+    \verbatim
+    Similar to MATCHED_VAR except that it is a collection of all matches for
+    the current operator check.
+
+    = SecRule ARGS pattern "chain,deny,id:26"
+    = SecRule MATCHED_VARS "@eq ARGS:param"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit MatchedVars_DictElement(std::string dictElement)
         : Variable("MATCHED_VARS" + std::string(":") +

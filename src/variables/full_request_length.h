@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class FullRequestLength : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FULL_REQUEST_LENGTH
+
+    \verbatim
+    Represents the amount of bytes that FULL_REQUEST may use.
+
+    = SecRule FULL_REQUEST_LENGTH "@eq 205" "id:21"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     FullRequestLength()
         : Variable("FULL_REQUEST_LENGTH") { }

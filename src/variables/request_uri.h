@@ -30,6 +30,32 @@ class Transaction;
 namespace Variables {
 
 class RequestURI : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_URI
+
+    \verbatim
+    This variable holds the full request URL including the query string data
+    (e.g., /index.php? p=X). However, it will never contain a domain name, even
+    if it was provided on the request line.
+
+    = SecRule REQUEST_URI "attack" "phase:1,id:52,t:none,t:urlDecode,t:lowercase,t:normalizePath"
+
+    Note: Please note that anti-evasion transformations are not used on
+    REQUEST_URI, which means that you will have to specify them in the rules
+    that use this variable.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestURI()
         : Variable("REQUEST_URI") { }

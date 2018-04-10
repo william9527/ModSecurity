@@ -31,6 +31,31 @@ namespace Variables {
 
 
 class RemoteUser : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REMOTE_USER
+
+    \verbatim
+    This variable holds the username of the authenticated user. If there are no
+    password access controls in place (Basic or Digest authentication), then
+    this variable will be empty.
+
+    = SecRule REMOTE_USER "@streq admin" "id:38"
+
+    Note: In a reverse-proxy deployment, this information will not be available
+    if the authentication is handled in the backend web server.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RemoteUser(std::string _name)
         : Variable(_name),

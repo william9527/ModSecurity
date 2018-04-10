@@ -30,6 +30,33 @@ class Transaction;
 namespace Variables {
 
 class RequestHeaders_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_HEADERS
+
+    \verbatim
+    This variable can be used as either a collection of all of the request
+    headers or can be used to inspect selected headers (by using the
+    REQUEST_HEADERS:Header-Name syntax).
+
+    = SecRule REQUEST_HEADERS:Host "^[\d\.]+$" "deny,id:47,log,status:400,msg:'Host header is a numeric IP address'"
+
+    Note: ModSecurity will treat multiple headers that have identical names in
+    accordance with how the webserver treats them. For Apache this means that
+    they will all be concatenated into a single header with a comma as the
+    deliminator.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RequestHeaders_DictElement(std::string dictElement)
         : Variable("REQUEST_HEADERS" + std::string(":") +

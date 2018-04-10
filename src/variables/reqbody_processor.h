@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class ReqbodyProcessor : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQBODY_PROCESSOR
+
+    \verbatim
+    Contains the name of the currently used request body processor. The
+    possible values are URLENCODED, MULTIPART, and XML.
+
+    = SecRule REQBODY_PROCESSOR "^XML$ chain,id:41"
+    = SecRule XML "@validateDTD /opt/apache-frontend/conf/xml.dtd"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ReqbodyProcessor()
         : Variable("REQBODY_PROCESSOR") { }

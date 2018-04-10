@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class Files_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FILES
+
+    \verbatim
+    Contains a collection of original file names (as they were called on the
+    remote user’s filesys- tem). Available only on inspected
+    multipart/form-data requests.
+
+    = SecRule FILES "@rx \.conf$" "id:17"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Files_DictElement(std::string dictElement)
         : Variable("FILES" + std::string(":") +

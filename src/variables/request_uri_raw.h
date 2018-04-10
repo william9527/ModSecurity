@@ -30,6 +30,31 @@ class Transaction;
 namespace Variables {
 
 class RequestURIRaw : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_URI_RAW
+
+    \verbatim
+    Same as REQUEST_URI but will contain the domain name if it was provided on
+    the request line (e.g., http://www.example.com/index.php?p=X).
+
+    = SecRule REQUEST_URI_RAW "http:/" "phase:1,id:53,t:none,t:urlDecode,t:lowercase,t:normalizePath"
+
+    Note: Please note that anti-evasion transformations are not used on
+    REQUEST_URI_RAW, which means that you will have to specify them in the
+    rules that use this variable.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestURIRaw()
         : Variable("REQUEST_URI_RAW") { }

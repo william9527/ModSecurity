@@ -29,6 +29,36 @@ class Transaction;
 namespace Variables {
 
 class Env : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: ENV
+
+    \verbatim
+    Collection that provides access to environment variables set by ModSecurity
+    or other server modules. Requires a single parameter to specify the name of
+    the desired variable.
+
+    = # Set environment variable
+    = SecRule REQUEST_FILENAME "printenv" "phase:2,id:15,pass,setenv:tag=suspicious"
+    =
+    = # Inspect environment variable
+    = SecRule ENV:tag "suspicious" "id:16"
+    =
+    = # Reading an environment variable from other Apache module (mod_ssl)
+    = SecRule TX:ANOMALY_SCORE "@gt 0" "phase:5,id:16,msg:'%{env.ssl_cipher}'"
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Env(std::string _name)
         : Variable(_name) { }

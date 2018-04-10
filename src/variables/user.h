@@ -32,6 +32,23 @@ namespace Variables {
 
 
 class User_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: USER
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit User_DictElement(std::string dictElement)
         : Variable("USER"),

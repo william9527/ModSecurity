@@ -30,6 +30,32 @@ class Transaction;
 namespace Variables {
 
 class MultipartCrlfLFLines : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_CRLF_LF_LINES
+
+    \verbatim
+    This flag variable will be set to 1 whenever a multi-part request uses
+    mixed line terminators. The multipart/form-data RFC requires CRLF sequence
+    to be used to terminate lines. Since some client implementations use only
+    LF to terminate lines you might want to allow them to proceed under certain
+    circumstances (if you want to do this you will need to stop using
+    MULTIPART_STRICT_ERROR and check each multi-part flag variable
+    individually, avoiding MULTIPART_LF_LINE). However, mixing CRLF and LF line
+    terminators is dangerous as it can allow for evasion. Therefore, in such
+    cases, you will have to add a check for MULTIPART_CRLF_LF_LINES.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartCrlfLFLines()
         : Variable("MULTIPART_CRLF_LF_LINES") { }

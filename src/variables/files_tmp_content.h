@@ -30,6 +30,29 @@ class Transaction;
 namespace Variables {
 
 class FilesTmpContent_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FILES_TMP_CONTENT
+
+    \verbatim
+    Contains a key-value set where value is the content of the file which was
+    uploaded. Useful when used together with @fuzzyHash.
+
+    = SecRule FILES_TMP_CONTENT "@fuzzyHash $ENV{CONF_DIR}/ssdeep.txt 1" "id:192372,log,deny"
+
+    Note: SecUploadKeepFiles should be set to 'On' in order to have this collection filled.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit FilesTmpContent_DictElement(std::string dictElement)
         : Variable("FILES_TMP_CONTENT" + std::string(":") +

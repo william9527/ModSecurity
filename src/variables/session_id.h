@@ -30,6 +30,25 @@ class Transaction;
 namespace Variables {
 
 class SessionID : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: SESSIONID
+
+    \verbatim
+    This variable contains the value set with setsid. See SESSION (above) for a
+    complete example.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     SessionID()
         : Variable("SESSIONID") { }

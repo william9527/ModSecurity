@@ -30,6 +30,27 @@ class Transaction;
 namespace Variables {
 
 class ReqbodyErrorMsg : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQBODY_ERROR_MSG
+
+    \verbatim
+    If there’s been an error during request body parsing, the variable will
+    contain the following error message:
+
+    = SecRule REQBODY_ERROR_MSG "failed to parse" "id:40"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ReqbodyErrorMsg()
         : Variable("REQBODY_ERROR_MSG") { }

@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartDateBefore : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_DATA_BEFORE
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartDateBefore()
         : Variable("MULTIPART_DATA_BEFORE") { }

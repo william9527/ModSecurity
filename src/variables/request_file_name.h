@@ -30,6 +30,31 @@ class Transaction;
 namespace Variables {
 
 class RequestFilename : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_FILENAME
+
+    \verbatim
+    This variable holds the relative request URL without the query string part
+    (e.g., /index.php).
+
+    = SecRule REQUEST_FILENAME "^/cgi-bin/login\.php$" phase:2,id:46,t:none,t:normalizePath
+
+    Note: Please note that anti-evasion transformations are not used on
+    REQUEST_FILENAME, which means that you will have to specify them in the
+    rules that use this variable.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestFilename()
         : Variable("REQUEST_FILENAME") { }

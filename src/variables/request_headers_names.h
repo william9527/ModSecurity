@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class RequestHeadersNames_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_HEADERS_NAMES
+
+    \verbatim
+    This variable is a collection of the names of all of the request headers.
+
+    = SecRule REQUEST_HEADERS_NAMES "^x-forwarded-for" "log,deny,id:48,status:403,t:lowercase,msg:'Proxy Server Used'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RequestHeadersNames_DictElement(std::string dictElement)
         : Variable("REQUEST_HEADERS_NAMES" + std::string(":") +

@@ -30,6 +30,24 @@ class Transaction;
 namespace Variables {
 
 class ArgsGet_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: ARGS_GET
+
+    \verbatim
+    ARGS_GET is similar to ARGS, but contains only query string parameters.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ArgsGet_DictElement(std::string dictElement)
         : Variable("ARGS_GET" + std::string(":") + std::string(dictElement)),

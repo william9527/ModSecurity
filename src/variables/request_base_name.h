@@ -30,6 +30,33 @@ class Transaction;
 namespace Variables {
 
 class RequestBasename : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_BASENAME
+
+    \verbatim
+    This variable holds just the filename part of REQUEST_FILENAME (e.g.,
+    index.php).
+
+    = SecRule REQUEST_BASENAME "^login\.php$" phase:2,id:42,t:none,t:lowercase
+
+    Note: Please note that anti-evasion transformations are not applied to this
+    variable by default. REQUEST_BASENAME will recognise both / and \ as path
+    separators. You should understand that the value of this variable depends
+    on what was provided in request, and that it does not have to correspond to
+    the resource (on disk) that will be used by the web server.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestBasename()
         : Variable("REQUEST_BASENAME") { }

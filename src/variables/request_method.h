@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class RequestMethod : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_METHOD
+
+    \verbatim
+    This variable holds the request method used in the transaction.
+
+    = SecRule REQUEST_METHOD "^(?:CONNECT|TRACE)$" "id:50,t:none"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestMethod()
         : Variable("REQUEST_METHOD") { }

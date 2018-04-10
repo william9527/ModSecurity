@@ -30,6 +30,29 @@ class Transaction;
 namespace Variables {
 
 class RequestCookies_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_COOKIES
+
+    \verbatim
+    This variable is a collection of all of request cookies (values only).
+    Example: the following example is using the Ampersand special operator to
+    count how many variables are in the collection. In this rule, it would
+    trigger if the request does not include any Cookie headers.
+
+    = SecRule &REQUEST_COOKIES "@eq 0" "id:44"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RequestCookies_DictElement(std::string dictElement)
         : Variable("REQUEST_COOKIES" + std::string(":") +

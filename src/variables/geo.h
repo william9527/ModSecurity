@@ -30,6 +30,44 @@ class Transaction;
 namespace Variables {
 
 class Geo_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: GEO
+
+    \verbatim
+    GEO is a collection populated by the results of the last @geoLookup
+    operator. The collection can be used to match geographical fields
+    looked from an IP address or hostname.
+
+    Fields:
+
+    - COUNTRY_CODE: Two character country code. EX: US, GB, etc.
+    - COUNTRY_CODE3: Up to three character country code.
+    - COUNTRY_NAME: The full country name.
+    - COUNTRY_CONTINENT: The two character continent that the country is located. EX: EU
+    - REGION: The two character region. For US, this is state. For Canada, providence, etc.
+    - CITY: The city name if supported by the database.
+    - POSTAL_CODE: The postal code if supported by the database.
+    - LATITUDE: The latitude if supported by the database.
+    - LONGITUDE: The longitude if supported by the database.
+    - DMA_CODE: The metropolitan area code if supported by the database. (US only)
+    - AREA_CODE: The phone system area code. (US only)
+
+    = SecGeoLookupDb /usr/local/geo/data/GeoLiteCity.dat
+    = SecRule REMOTE_ADDR "@geoLookup" "chain,id:22,drop,msg:'Non-GB IP address'"
+    = SecRule GEO:COUNTRY_CODE "!@streq GB"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Geo_DictElement(std::string dictElement)
         : Variable("GEO" + std::string(":") +

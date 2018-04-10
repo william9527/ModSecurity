@@ -30,6 +30,32 @@ class Transaction;
 namespace Variables {
 
 class ResponseHeaders_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESPONSE_HEADERS
+
+    \verbatim
+    This variable refers to response headers, in the same way as
+    REQUEST_HEADERS does to request headers.
+
+    = SecRule RESPONSE_HEADERS:X-Cache "MISS" "id:55"
+
+    This variable may not have access to some headers when running in embedded
+    mode. Headers such as Server, Date, Connection, and Content-Type could be
+    added just prior to sending the data to the client. This data should be
+    available in phase 5 or when deployed in proxy mode.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ResponseHeaders_DictElement(std::string dictElement)
         : Variable("RESPONSE_HEADERS" + std::string(":") +

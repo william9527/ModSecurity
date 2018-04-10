@@ -30,6 +30,31 @@ class Transaction;
 namespace Variables {
 
 class OutboundDataError : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: OUTBOUND_DATA_ERROR
+
+    \verbatim
+    This variable will be set to 1 when the response body size is above the
+    setting configured by SecResponseBodyLimit directive. Your policies should
+    always contain a rule to check this variable. Depending on the rate of
+    false positives and your default policy you should decide whether to block
+    or just warn when the rule is triggered.
+
+    The best way to use this variable is as in the example below:
+    = SecRule OUTBOUND_DATA_ERROR "@eq 1" "phase:1,id:32,t:none,log,pass,msg:'Response Body Larger than SecResponseBodyLimit Setting'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     OutboundDataError()
         : Variable("OUTBOUND_DATA_ERROR") { }

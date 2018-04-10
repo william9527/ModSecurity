@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class RequestProtocol : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_PROTOCOL
+
+    \verbatim
+    This variable holds the request protocol version information.
+
+    = SecRule REQUEST_PROTOCOL "!^HTTP/(0\.9|1\.0|1\.1)$" "id:51"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestProtocol()
         : Variable("REQUEST_PROTOCOL") { }

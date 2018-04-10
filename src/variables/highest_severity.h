@@ -29,6 +29,31 @@ class Transaction;
 namespace Variables {
 
 class HighestSeverity : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: HIGHEST_SEVERITY
+
+    \verbatim
+    This variable holds the highest severity of any rules that have matched so
+    far. Severities are numeric values and thus can be used with comparison
+    operators such as @lt, and so on. A value of 255 indicates that no severity
+    has been set.
+
+    = SecRule HIGHEST_SEVERITY "@le 2" "phase:2,id:23,deny,status:500,msg:'severity %{HIGHEST_SEVERITY}'"
+
+    Note: Higher severities have a lower numeric value.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit HighestSeverity(std::string _name)
         : Variable(_name),

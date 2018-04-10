@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class RemoteAddr : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REMOTE_ADDR
+
+    \verbatim
+    This variable holds the IP address of the remote client.
+
+    = SecRule REMOTE_ADDR "@ipMatch 192.168.1.101" "id:35"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RemoteAddr()
         : Variable("REMOTE_ADDR") { }

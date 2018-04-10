@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class ReqbodyProcessorErrorMsg : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: PROCESSOR_ERROR_MSG
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ReqbodyProcessorErrorMsg()
         : Variable("PROCESSOR_ERROR_MSG") { }

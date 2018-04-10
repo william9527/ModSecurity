@@ -32,6 +32,23 @@ namespace Variables {
 
 
 class Global_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: GLOBAL
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Global_DictElement(std::string dictElement)
         : Variable("GLOBAL"),

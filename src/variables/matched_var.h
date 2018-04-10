@@ -30,6 +30,33 @@ class Transaction;
 namespace Variables {
 
 class MatchedVar : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MATCHED_VAR
+
+    \verbatim
+    This variable holds the value of the most-recently matched variable. It is
+    similar to the TX:0, but it is automatically supported by all operators and
+    there is no need to specify the capture action.
+
+    = SecRule ARGS pattern chain,deny,id:25
+    = SecRule MATCHED_VAR "further scrutiny"
+
+    Note: Be aware that this variable holds data for the last operator match.
+    This means that if there are more than one matches, only the last one will
+    be populated. Use MATCHED_VARS variable if you want all matches.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MatchedVar()
         : Variable("MATCHED_VAR") { }

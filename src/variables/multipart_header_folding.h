@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartHeaderFolding : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_HEADER_FOLDING
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartHeaderFolding()
         : Variable("MULTIPART_HEADER_FOLDING") { }

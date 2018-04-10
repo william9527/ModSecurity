@@ -30,6 +30,29 @@ class Transaction;
 namespace Variables {
 
 class UrlEncodedError : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: URLENCODED_ERROR
+
+    \verbatim
+    This variable is created when an invalid URL encoding is encountered during
+    the parsing of a query string (on every request) or during the parsing of
+    an application/x-www-form-urlencoded request body (only on the requests
+    that use the URLENCODED request body processor).
+
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     UrlEncodedError()
         : Variable("URLENCODED_ERROR") { }

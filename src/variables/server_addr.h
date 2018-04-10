@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class ServerAddr : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: SERVER_ADDR
+
+    \verbatim
+    This variable contains the IP address of the server.
+
+    = SecRule SERVER_ADDR "@ipMatch 192.168.1.100" "id:67"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ServerAddr()
         : Variable("SERVER_ADDR") { }

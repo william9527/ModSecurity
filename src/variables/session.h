@@ -32,6 +32,43 @@ namespace Variables {
 
 
 class Session_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: SESSION
+
+    \verbatim
+    This variable is a collection that contains session information. It becomes
+    available only after setsid is executed.
+
+    The following example shows how to initialize SESSION using setsid, how to
+    use setvar to increase the SESSION.score values, how to set the
+    SESSION.blocked variable, and finally, how to deny the connection based on
+    the SESSION:blocked value:
+
+    = # Initialize session storage
+    = SecRule REQUEST_COOKIES:PHPSESSID !^$ "phase:2,id:70,nolog,pass,setsid:%{REQUEST_COOKIES.PHPSESSID}"
+    =
+    = # Increment session score on attack
+    = SecRule REQUEST_URI "^/cgi-bin/finger$" "phase:2,id:71,t:none,t:lowercase,t:normalizePath,pass,setvar:SESSION.score=+10"
+    =
+    = # Detect too many attacks in a session
+    = SecRule SESSION:score "@gt 50" "phase:2,id:72,pass,setvar:SESSION.blocked=1"
+    =
+    = # Enforce session block
+    = SecRule SESSION:blocked "@eq 1" "phase:2,id:73,deny,status:403"
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Session_DictElement(std::string dictElement)
         : Variable("SESSION"),

@@ -30,6 +30,27 @@ class Transaction;
 namespace Variables {
 
 class ResponseBody : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: RESPONSE_BODY
+
+    \verbatim
+    This variable holds the data for the response body, but only when response
+    body buffering is enabled.
+
+    = SecRule RESPONSE_BODY "ODBC Error Code" "phase:4,id:54,t:none"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     ResponseBody()
         : Variable("RESPONSE_BODY") { }

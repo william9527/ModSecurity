@@ -29,6 +29,27 @@ class Transaction;
 namespace Variables {
 
 class TimeMin : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME_MIN
+
+    \verbatim
+    This variable holds the current minute value (0–59). The following rule
+    triggers during the last half hour of every hour:
+
+    = SecRule TIME_MIN "^(3|4|5)" "id:77"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit TimeMin(std::string _name)
         : Variable(_name),

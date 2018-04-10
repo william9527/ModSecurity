@@ -30,6 +30,23 @@ class Transaction;
 namespace Variables {
 
 class MultipartBoundaryWhiteSpace : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: MULTIPART_BOUNDARY_WHITESPACE
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     MultipartBoundaryWhiteSpace()
         : Variable("MULTIPART_BOUNDARY_WHITESPACE") { }

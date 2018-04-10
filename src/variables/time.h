@@ -30,6 +30,26 @@ class Transaction;
 namespace Variables {
 
 class Time : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: TIME
+
+    \verbatim
+    This variable holds a formatted string representing the time (hour:minute:second).
+
+    = SecRule TIME "^(([1](8|9))|([2](0|1|2|3))):\d{2}:\d{2}$" "id:74"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Time(std::string _name)
         : Variable(_name),

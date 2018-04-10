@@ -30,6 +30,28 @@ class Transaction;
 namespace Variables {
 
 class FilesSizes_DictElement : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: FILES_SIZES
+
+    \verbatim
+    Contains a list of individual file sizes. Useful for implementing a size
+    limitation on individual uploaded files. Available only on inspected
+    multipart/form-data requests.
+
+    = SecRule FILES_SIZES "@gt 100" "id:20"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit FilesSizes_DictElement(std::string dictElement)
         : Variable("FILES_SIZES" + std::string(":") +

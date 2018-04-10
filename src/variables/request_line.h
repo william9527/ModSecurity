@@ -30,6 +30,29 @@ class Transaction;
 namespace Variables {
 
 class RequestLine : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REQUEST_LINE
+
+    \verbatim
+    This variable holds the complete request line sent to the server (including
+    the request method and HTTP version information).
+
+    = # Allow only POST, GET and HEAD request methods, as well as only
+    = # the valid protocol versions
+    = SecRule REQUEST_LINE "!(^((?:(?:POS|GE)T|HEAD))|HTTP/(0\.9|1\.0|1\.1)$)" "phase:1,id:49,log,block,t:none"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RequestLine()
         : Variable("REQUEST_LINE") { }

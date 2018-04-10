@@ -30,6 +30,30 @@ class Transaction;
 namespace Variables {
 
 class RemotePort : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: REMOTE_PORT
+
+    \verbatim
+    This variable holds information on the source port that the client used
+    when initiating the connection to our web server.
+
+    In the following example, we are evaluating to see whether the REMOTE_PORT
+    is less than 1024, which would indicate that the user is a privileged user:
+
+    = SecRule REMOTE_PORT "@lt 1024" "id:37"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     RemotePort()
         : Variable("REMOTE_PORT") { }

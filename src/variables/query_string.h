@@ -30,6 +30,27 @@ class Transaction;
 namespace Variables {
 
 class QueryString : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: QUERY_STRING
+
+    \verbatim
+    Contains the query string part of a request URI. The value in QUERY_STRING
+    is always provided raw, without URL decoding taking place.
+
+    = SecRule QUERY_STRING "attack" "id:34"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     QueryString()
         : Variable("QUERY_STRING") { }

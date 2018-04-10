@@ -30,6 +30,32 @@ class Transaction;
 namespace Variables {
 
 class InboundDataError : public Variable {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Name: INBOUND_DATA_ERROR
+
+    \verbatim
+    This variable will be set to 1 when the request body size is above the
+    setting configured by SecRequestBodyLimit directive. Your policies should
+    always contain a rule to check this variable. Depending on the rate of
+    false positives and your default policy you should decide whether to block
+    or just warn when the rule is triggered.
+
+    The best way to use this variable is as in the example below:
+
+    = SecRule INBOUND_DATA_ERROR "@eq 1" "phase:1,id:24,t:none,log,pass,msg:'Request Body Larger than SecRequestBodyLimit Setting'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     InboundDataError()
         : Variable("INBOUND_DATA_ERROR") { }
