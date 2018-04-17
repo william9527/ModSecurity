@@ -31,6 +31,35 @@ namespace actions {
 
 
 class SetRSC : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Special-purpose action that initializes the RESOURCE collection using a key
+    provided as parameter.
+
+    This action understands application namespaces (configured using
+    SecWebAppId), and will use one if it is configured.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecAction "phase:1,pass,id:3,log,setrsc:'abcd1234'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit SetRSC(std::string _action)
         : Action(_action) { }

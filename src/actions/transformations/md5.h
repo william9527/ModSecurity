@@ -29,6 +29,27 @@ namespace actions {
 namespace transformations {
 
 class Md5 : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Calculates an MD5 hash from the data in input. The computed hash is in a
+    raw binary form and may need encoded into text to be printed (or logged).
+    Hash functions are commonly used in combination with hexEncode (for
+    example: t:md5,t:hexEncode).
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Md5(std::string action) : Transformation(action) { }
 

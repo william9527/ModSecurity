@@ -29,6 +29,26 @@ namespace actions {
 namespace transformations {
 
 class Length : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Looks up the length of the input string in bytes, placing it (as string)
+    in output. For example, if it gets ABCDE on input, this transformation
+    function will return 5 on output.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Length(std::string action);
     std::string evaluate(std::string exp,

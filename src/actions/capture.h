@@ -27,6 +27,38 @@ namespace actions {
 
 
 class Capture : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    When used together with the regular expression operator (@rx), the capture
+    action will create copies of the regular expression captures and place
+    them into the transaction variable collection.
+
+    Up to 10 captures will be copied on a successful pattern match, each with a
+    name consisting of a digit from 0 to 9. The TX.0 variable always contains
+    the entire area that the regular expression matched. All the other
+    variables contain the captured values, in the order in which the capturing
+    parentheses appear in the regular expression.
+    \endverbatim
+
+    Example
+
+    \verbatim
+    = SecRule REQUEST_BODY "^username=(\w{25,})" phase:2,capture,t:none,chain,id:105
+  SecRule TX:1 "(?:(?:a(dmin|nonymous)))"
+    \endverbatim
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Capture(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind) { }

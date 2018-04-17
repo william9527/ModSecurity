@@ -28,6 +28,41 @@ namespace actions {
 
 
 class Skip : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Flow
+
+    \verbatim
+    Skips one or more rules (or chains) on successful match.
+
+    The skip action works only within the current processing phase and not
+    necessarily in the order in which the rules appear in the configuration
+    file. If you place a phase 2 rule after a phase 1 rule that uses skip, it
+    will not skip over the phase 2 rule. It will skip over the next phase 1
+    rule that follows it in the phase.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    # Require Accept header, but not from access from the localhost 
+    = SecRule REMOTE_ADDR "^127\.0\.0\.1$" "phase:1,skip:1,id:141" 
+
+    # This rule will be skipped over when REMOTE_ADDR is 127.0.0.1 
+    = SecRule &REQUEST_HEADERS:Accept "@eq 0" "phase:1,id:142,deny,msg:'Request Missing an Accept Header'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Skip(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind),

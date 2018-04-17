@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class RemoveWhitespace : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Removes all whitespace characters from input.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RemoveWhitespace(std::string action);
     std::string evaluate(std::string exp,

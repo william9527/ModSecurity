@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class Trim : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Removes whitespace from both the left and right sides of the input string.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Trim(std::string action);
     std::string evaluate(std::string exp,

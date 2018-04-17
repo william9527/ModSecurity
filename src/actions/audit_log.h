@@ -31,6 +31,30 @@ namespace actions {
 
 
 class AuditLog : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Marks the transaction for logging in the audit log.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit AuditLog(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind) { }

@@ -31,6 +31,36 @@ namespace actions {
 
 
 class SetUID : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Special-purpose action that initializes the USER collection using the
+    username provided as parameter.
+
+    After initialization takes place, the variable USERID will be available for
+    use in the subsequent rules. This action understands application namespaces
+    (configured using SecWebAppId), and will use one if it is configured.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecRule ARGS:username ".*" "phase:2,id:137,t:none,pass,nolog,noauditlog,capture,setvar:session.username=%{TX.0},setuid:%{TX.0}"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit SetUID(std::string _action)
         : Action(_action) { }

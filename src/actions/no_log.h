@@ -29,6 +29,34 @@ namespace actions {
 
 
 class NoLog : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Prevents rule matches from appearing in both the error and audit logs.
+
+    Although nolog implies noauditlog, you can override the former by using
+    nolog,auditlog.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecRule REQUEST_HEADERS:User-Agent "Test" allow,nolog,id:121
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit NoLog(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind) { }

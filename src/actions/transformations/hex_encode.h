@@ -29,6 +29,26 @@ namespace actions {
 namespace transformations {
 
 class HexEncode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Encodes string (possibly containing binary characters) by replacing each
+    input byte with two hexadecimal characters. For example, xyz is encoded as
+    78797a.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit HexEncode(std::string action);
     std::string evaluate(std::string exp,

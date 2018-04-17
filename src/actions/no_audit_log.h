@@ -31,6 +31,42 @@ namespace actions {
 
 
 class NoAuditLog : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Indicates that a successful match of the rule should not be used as
+    criteria to determine whether the transaction should be logged to the
+    audit log.
+
+    If the SecAuditEngine is set to On, all of the transactions will be logged.
+    If it is set to RelevantOnly, then you can control the logging with the
+    noauditlog action.
+
+    The noauditlog action affects only the current rule. If you prevent audit
+    logging in one rule only, a match in another rule will still cause audit
+    logging to take place. If you want to prevent audit logging from taking
+    place, regardless of whether any rule matches, use ctl:auditEngine=Off.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecRule REQUEST_HEADERS:User-Agent "Test" allow,noauditlog,id:120
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit NoAuditLog(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind) { }

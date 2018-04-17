@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class ReplaceNulls : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Replaces NUL bytes in input with space characters (ASCII 0x20).
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ReplaceNulls(std::string action);
     std::string evaluate(std::string exp,

@@ -28,6 +28,34 @@ namespace actions {
 
 
 class XmlNS : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Data
+
+    \verbatim
+    Configures an XML namespace, which will be used in the execution of XPath
+    expressions.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecRule REQUEST_HEADERS:Content-Type "text/xml" "phase:1,id:147,pass,ctl:requestBodyProcessor=XML,ctl:requestBodyAccess=On, \
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    = SecRule XML:/soap:Envelope/soap:Body/q1:getInput/id() "123" phase:2,deny,id:148
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit XmlNS(std::string action) : Action(action) { }
 

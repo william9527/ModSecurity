@@ -31,6 +31,36 @@ namespace actions {
 
 
 class InitCol : public Action {
+    /** @ingroup  ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Initializes a named persistent collection, either by loading data from
+    storage or by creating a new collection in memory.
+
+    Collections are loaded into memory on-demand, when the initcol action is
+    executed. A collection will be persisted only if a change was made to it
+    in the course of transaction processing.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    The following example initiates IP address tracking, which is best done in phase 1:
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit InitCol(std::string action) : Action(action) { }
 

@@ -29,6 +29,25 @@ namespace actions {
 namespace transformations {
 
 class HexDecode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Decodes a string that has been encoded using the same algorithm as the one
+    used in hexEncode (see following entry).
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit HexDecode(std::string action) : Transformation(action) { }
 

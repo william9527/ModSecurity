@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class RemoveNulls : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Removes all NUL bytes from input.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RemoveNulls(std::string action)
         : Transformation(action) { }

@@ -29,6 +29,25 @@ namespace actions {
 namespace transformations {
 
 class ParityOdd7bit : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Calculates odd parity of 7-bit data replacing the 8th bit of each target
+    byte with the calculated parity bit.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ParityOdd7bit(std::string action) : Transformation(action) { }
 

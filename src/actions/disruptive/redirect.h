@@ -35,6 +35,37 @@ namespace disruptive {
 
 
 class Redirect : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Disruptive
+
+    \verbatim
+    Intercepts transaction by issuing an external (client-visible) redirection
+    to the given location.
+
+    If the status action is present on the same rule, and its value can be used
+    for a redirection (i.e., is one of the following: 301, 302, 303, or 307),
+    the value will be used for the redirection status code. Otherwise, status
+    code 302 will be used.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecRule REQUEST_HEADERS:User-Agent "Test" "phase:1,id:130,log,redirect:http://www.example.com/failed.html"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Redirect(const std::string &action)
         : Action(action, RunTimeOnlyIfMatchKind),

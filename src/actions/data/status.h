@@ -32,6 +32,38 @@ namespace data {
 
 
 class Status : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Data
+
+    \verbatim
+    Specifies the response status code to use with actions deny and redirect.
+
+    Status actions defined in Apache scope locations (such as Directory,
+    Location, etc...) may be superseded by phase:1 action settings. The Apache
+    ErrorDocument directive will be triggered if present in the configuration.
+    Therefore if you have previously defined a custom error page for a given
+    status then it will be executed and its output presented to the user.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    # Deny with status 403
+    = SecDefaultAction "phase:1,log,deny,id:145,status:403"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Status(std::string action) : Action(action, 2),
     m_status(0) { }

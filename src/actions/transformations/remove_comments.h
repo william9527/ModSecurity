@@ -30,6 +30,25 @@ namespace transformations {
 
 
 class RemoveComments : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Removes each occurrence of comment (/* ... *, --, #). Multiple consecutive
+    occurrences of which will not be compressed.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RemoveComments(std::string action) : Transformation(action) { }
 

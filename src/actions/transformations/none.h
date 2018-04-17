@@ -29,6 +29,25 @@ namespace actions {
 namespace transformations {
 
 class None : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Not an actual transformation function, but an instruction to ModSecurity to
+    remove all transformation functions associated with the current rule.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit None(std::string action)
         : Transformation(action)

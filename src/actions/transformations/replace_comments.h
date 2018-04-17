@@ -29,6 +29,28 @@ namespace actions {
 namespace transformations {
 
 class ReplaceComments : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Replaces each occurrence of a C-style comment (/* ... *) with a single
+    space (multiple consecutive occurrences of which will not be compressed).
+    Unterminated comments will also be replaced with a space (ASCII 0x20).
+    However, a standalone termination of a comment (*\/) will not be acted
+    upon.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ReplaceComments(std::string action);
     std::string evaluate(std::string exp,

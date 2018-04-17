@@ -34,6 +34,26 @@ namespace actions {
 namespace transformations {
 
 class Utf8ToUnicode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Converts all UTF-8 characters sequences to Unicode. This help input
+    normalization specially for non-english languages minimizing
+    false-positives and false-negatives.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Utf8ToUnicode(std::string action) : Transformation(action) { }
 

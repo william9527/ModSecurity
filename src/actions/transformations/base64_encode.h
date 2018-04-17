@@ -29,6 +29,28 @@ namespace actions {
 namespace transformations {
 
 class Base64Encode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Decodes a Base64-encoded string. Unlike base64Decode, this version uses a
+    forgiving implementation, which ignores invalid characters.
+
+    See blog post on Base64Decoding evasion issues on PHP sites -
+    http://blog.spiderlabs.com/2010/04/impedance-mismatch-and-base64.html
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Base64Encode(std::string action) : Transformation(action) { }
 

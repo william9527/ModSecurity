@@ -29,6 +29,34 @@ namespace actions {
 
 
 class Log : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Indicates that a successful match of the rule needs to be logged.
+
+    This action will log matches to the Web Server error log file and the
+    ModSecurity audit log.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecAction phase:1,id:117,pass,initcol:ip=%{REMOTE_ADDR},log
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Log(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind) { }

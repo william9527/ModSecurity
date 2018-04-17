@@ -29,6 +29,26 @@ namespace actions {
 namespace transformations {
 
 class ParityZero7bit : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Calculates zero parity of 7-bit data replacing the 8th bit of each target
+    byte with a zero-parity bit, which allows inspection of even/odd parity
+    7-bit data as ASCII7 data.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit ParityZero7bit(std::string action) : Transformation(action) { }
 

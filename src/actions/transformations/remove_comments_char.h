@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class RemoveCommentsChar : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Removes common comments chars (/*, , --, #).
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RemoveCommentsChar(std::string action);
     std::string evaluate(std::string exp,

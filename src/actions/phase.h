@@ -31,6 +31,41 @@ namespace actions {
 
 
 class Phase : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Meta-data
+
+    \verbatim
+    Places the rule or chain into one of five available processing phases. It
+    can also be used in SecDefaultAction to establish the rule defaults.
+
+    There are aliases for some phase numbers:
+        2 - request
+        4 - response
+        5 - logging
+
+    Warning: Keep in mind that if you specify the incorrect phase, the
+    variable used in the rule may not yet be available. This could lead to a
+    false negative situation where your variable and operator may be correct,
+    but it misses malicious data because you specified the wrong phase.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Phase(std::string action) : Action(action, ConfigurationKind),
         m_phase(0),

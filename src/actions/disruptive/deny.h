@@ -29,6 +29,33 @@ namespace disruptive {
 
 
 class Deny : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Disruptive
+
+    \verbatim
+    Stops rule processing and intercepts transaction.
+
+
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecRule REQUEST_HEADERS:User-Agent "nikto" "log,deny,id:107,msg:'Nikto Scanners Identified'"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Deny(std::string action) : Action(action) { }
 

@@ -29,6 +29,26 @@ namespace actions {
 namespace transformations {
 
 class CompressWhitespace : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Converts any of the whitespace characters (0x20, \f, \t, \n, \r, \v, 0xa0)
+    to spaces (ASCII 0x20), compressing multiple consecutive space characters
+    into one.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit CompressWhitespace(std::string action);
     std::string evaluate(std::string exp,

@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class SqlHexDecode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Decode sql hex data. Example (0x414243) will be decoded to (ABC).
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit SqlHexDecode(std::string action) : Transformation(action) { }
 

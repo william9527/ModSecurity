@@ -32,6 +32,38 @@ namespace transformations {
 
 
 class HtmlEntityDecode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Decodes the characters encoded as HTML entities. The following variants are
+    supported:
+
+    - HH and HH; (where H is any hexadecimal number)
+    - DDD and DDD; (where D is any decimal number)
+    - &quotand"
+    - &nbspand 
+    - &ltand<
+    - &gtand>
+
+    This function always converts one HTML entity into one byte, possibly
+    resulting in a loss of information (if the entity refers to a character
+    that cannot be represented with the single byte). It is thus useful to
+    uncover bytes that would otherwise not need to be encoded, but it cannot
+    do anything meaningful with the characters from the range above 0xff.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit HtmlEntityDecode(std::string action)
         : Transformation(action) { }

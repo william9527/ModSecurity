@@ -29,6 +29,29 @@ namespace actions {
 namespace transformations {
 
 class Sha1 : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Calculates a SHA1 hash from the input string. The computed hash is in a raw
+    binary form and may need encoded into text to be printed (or logged). Hash
+    functions are commonly used in combination with hexEncode (for example,
+    t:sha1,t:hexEncode).
+
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Sha1(std::string action);
     std::string evaluate(std::string exp,

@@ -31,6 +31,30 @@ namespace transformations {
 
 
 class UrlDecode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Decodes a URL-encoded input string. Invalid encodings (i.e., the ones that
+    use non-hexadecimal characters, or the ones that are at the end of string
+    and have one or two bytes missing) are not converted, but no error is
+    raised. To detect invalid encodings, use the @validateUrlEncoding operator
+    on the input data first. The transformation function should not be used
+    against variables that have already been URL-decoded (such as request
+    parameters) unless it is your intention to perform URL decoding twice!
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit UrlDecode(std::string action);
     std::string evaluate(std::string exp,

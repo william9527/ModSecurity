@@ -28,6 +28,33 @@ namespace ctl {
 
 
 class RequestBodyAccess : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Changes ModSecurity configuration on transient, per-transaction basis. Any
+    changes made using this action will affect only the transaction in which
+    the action is executed. The default configuration, as well as the other
+    transactions running in parallel, will be unaffected.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit RequestBodyAccess(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind),

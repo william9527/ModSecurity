@@ -30,6 +30,29 @@ namespace transformations {
 
 
 class CssDecode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Decodes characters encoded using the CSS 2.x escape rules
+    syndata.html#characters. This function uses only up to two bytes in the
+    decoding process, meaning that it is useful to uncover ASCII characters
+    encoded using CSS encoding (that wouldn’t normally be encoded), or to
+    counter evasion, which is a combination of a backslash and non-hexadecimal
+    characters (e.g., ja\vascript is equivalent to javascript).
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit CssDecode(std::string action)
         : Transformation(action) { }

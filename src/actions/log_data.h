@@ -31,6 +31,36 @@ namespace actions {
 
 
 class LogData : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Logs a data fragment as part of the alert message.
+
+    The logdata information appears in the error and/or audit log files. Macro
+    expansion is performed, so you may use variable names such as %{TX.0} or
+    %{MATCHED_VAR}. The information is properly escaped for use with logging
+    of binary data.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    = SecRule ARGS:p "@rx <script>" "phase:2,id:118,log,pass,logdata:%{MATCHED_VAR}"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit LogData(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind) { }

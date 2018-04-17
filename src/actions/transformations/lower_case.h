@@ -31,6 +31,24 @@ namespace transformations {
 
 
 class LowerCase : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Converts all characters to lowercase using the current C locale.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit LowerCase(std::string action);
     std::string evaluate(std::string exp,

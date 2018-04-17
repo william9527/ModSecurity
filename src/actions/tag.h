@@ -31,6 +31,35 @@ namespace actions {
 
 
 class Tag : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Meta-data
+
+    \verbatim
+    Assigns a tag (category) to a rule or a chain.
+
+    The tag information appears along with other rule metadata. The purpose of
+    the tagging mechanism to allow easy automated categorization of events.
+    Multiple tags can be specified on the same rule. Use forward slashes to
+    create a hierarchy of categories (as in the example).
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Tag(std::unique_ptr<RunTimeString> z)
         : Action("tag", RunTimeOnlyIfMatchKind),

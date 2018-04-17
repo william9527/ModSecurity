@@ -52,6 +52,55 @@ enum AllowType : int {
 
 
 class Allow : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Disruptive
+
+    \verbatim
+    Stops rule processing on a successful match and allows the transaction to
+    proceed.
+
+    Starting with v2.5.0 allow was enhanced to allow for fine-grained control
+    of what is done. The following rules now apply:
+
+    If used one its own, like in the example above, allow will affect the
+    entire transaction, stopping processing of the current phase but also
+    skipping over all other phases apart from the logging phase. (The
+    logging phase is special; it is designed to always execute.) If used with
+    parameter "phase", allow will cause the engine to stop processing the
+    current phase. Other phases will continue as normal.
+
+    If used with parameter "request", allow will cause the engine to stop
+    processing the current phase. The next phase to be processed will be
+    phase RESPONSE_HEADERS.
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    # Do not process request but process response.
+    = SecAction phase:1,allow:request,id:96
+
+    # Do not process transaction (request and response).
+    = SecAction phase:1,allow,id:97
+
+    If you want to allow a response through, put a rule in phase RESPONSE_HEADERS and simply use allow on its own:
+
+    # Allow response through.
+    = SecAction phase:3,allow,id:98
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Allow(std::string action)
         : Action(action, RunTimeOnlyIfMatchKind),

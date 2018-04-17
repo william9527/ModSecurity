@@ -29,6 +29,45 @@ namespace actions {
 namespace transformations {
 
 class CmdLine : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    In Windows and Unix, commands may be escaped by different means, such as:
+
+    - c^ommand /c ...
+    - "command" /c ...
+    - command,/c ...
+    - backslash in the middle of a Unix command
+
+    The cmdLine transformation function avoids this problem by manipulating the
+    variable contend in the following ways:
+
+    - deleting all backslashes [\]
+    - deleting all double quotes ["]
+    - deleting all sigle quotes [']
+    - deleting all carets [^]
+    - deleting spaces before a slash /
+    - deleting spaces before an open parentesis [(]
+    - replacing all commas [,] and semicolon [;] into a space
+    - replacing all multiple spaces (including tab, newline, etc.) into one space
+    - transform all characters to lowercase
+
+    = SecRule ARGS "(?:command(?:.com)?|cmd(?:.exe)?)(?:/.*)?/[ck]" "phase:2,id:94,t:none, t:cmdLine"
+
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit CmdLine(std::string action)
         : Transformation(action) { }

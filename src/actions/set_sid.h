@@ -31,6 +31,41 @@ namespace actions {
 
 
 class SetSID : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Non-disruptive
+
+    \verbatim
+    Special-purpose action that initializes the SESSION collection using the
+    session token provided as parameter.
+
+    Note: After the initialization takes place, the variable SESSION will be
+    available for use in the subsequent rules. This action understands
+    application namespaces (configured using SecWebAppId), and will use one if
+    it is configured.
+
+    Setsid takes an individual variable, not a collection. Variables within an
+    action, such as setsid, use the format [collection].[variable] .
+    \endverbatim
+
+
+    Example
+
+    \verbatim
+    # Initialise session variables using the session cookie value 
+    = SecRule REQUEST_COOKIES:PHPSESSID !^$ "nolog,pass,id:138,setsid:%{REQUEST_COOKIES.PHPSESSID}"
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit SetSID(std::string _action)
         : Action(_action) { }

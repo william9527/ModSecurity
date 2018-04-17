@@ -29,6 +29,26 @@ namespace actions {
 namespace transformations {
 
 class NormalisePath : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Removes multiple slashes, directory self-references, and directory
+    back-references (except when at the beginning of the input) from input
+    string.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit NormalisePath(std::string action);
     std::string evaluate(std::string exp,

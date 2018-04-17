@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class NormalisePathWin : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Same as normalizePath, but first converts backslash characters to forward slashes.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit NormalisePathWin(std::string action)
         : Transformation(action) { }

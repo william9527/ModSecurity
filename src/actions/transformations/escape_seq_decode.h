@@ -29,6 +29,26 @@ namespace actions {
 namespace transformations {
 
 class EscapeSeqDecode : public Transformation {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Decodes ANSI C escape sequences: \a, \b, \f, \n, \r, \t, \v, \\, \?, \',
+    \", \xHH (hexadecimal), \0OOO (octal). Invalid encodings are left in the
+    output.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit EscapeSeqDecode(std::string action);
     std::string evaluate(std::string exp,

@@ -31,6 +31,36 @@ namespace actions {
 
 
 class Chain : public Action {
+    /** @ingroup ModSecurity_RefManual */
+    /**
+
+    Description
+
+    Group: Flow
+
+    \verbatim
+    Chains the current rule with the rule that immediately follows it, creating
+    a rule chain. Chained rules allow for more complex processing logic.
+    
+    Note: Rule chains allow you to simulate logical AND. The disruptive actions specified in the first portion of the chained rule will be triggered only if all of the variable checks return positive hits. If any one aspect of a chained rule comes back negative, then the entire rule chain will fail to match. Also note that disruptive actions, execution phases, metadata actions (id, rev, msg, tag, severity, logdata), skip, and skipAfter actions can be specified only by the chain starter rule.
+    \endverbatim
+
+    Example
+
+    \verbatim
+    # Refuse to accept POST requests that do not contain Content-Length header. 
+    # (Do note that this rule should be preceded by a rule 
+    # that verifies only valid request methods are used.) 
+    = SecRule REQUEST_METHOD "^POST$" phase:1,chain,t:none,id:105
+    =    SecRule &REQUEST_HEADERS:Content-Length "@eq 0" t:none
+    \endverbatim
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit Chain(std::string action)
         : Action(action, ConfigurationKind) { }

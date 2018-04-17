@@ -29,6 +29,24 @@ namespace actions {
 namespace transformations {
 
 class UrlEncode : public Transformation {
+    /** @ingroup ModSecurity_Variables ModSecurity_RefManual ModSecurity_RefManualVar */
+    /**
+
+    Description
+
+    Group: Transformation
+
+    \verbatim
+    Encodes input string using URL encoding.
+    \endverbatim
+
+
+    Details
+
+    \verbatim
+    \endverbatim
+
+    */
  public:
     explicit UrlEncode(std::string action);
     std::string evaluate(std::string exp,
