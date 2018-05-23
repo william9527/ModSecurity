@@ -1338,8 +1338,8 @@ apr_status_t multipart_cleanup(modsec_rec *msr) {
 
                     new_basename = file_basename(msr->mp, parts[i]->tmp_file_name);
                     if (new_basename == NULL) return -1;
-                    new_filename = apr_psprintf(msr->mp, "%s/%s", msr->txcfg->upload_dir,
-                        new_basename);
+                    new_filename = apr_psprintf(msr->mp, "%s/%s_%s", msr->txcfg->upload_dir,
+                        new_basename,parts[i]->filename);
                     if (new_filename == NULL) return -1;
 
                     if (apr_file_rename(parts[i]->tmp_file_name, new_filename,
